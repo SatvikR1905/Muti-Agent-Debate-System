@@ -1,0 +1,9 @@
+ollama
+langchain
+langchain-community
+langchain-core
+chromadb
+pypdf
+streamlit
+tiktoken
+python-dotenv
