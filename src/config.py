@@ -15,14 +15,6 @@ CHUNK_OVERLAP = 50
 ENABLE_RAG = True
 RETRIEVER_K = 3
 
-# Agent Configuration
-SOUTH_INDIAN_NAMES = [
-    "Ramesh", "Sita", "Krishna", "Lakshmi", "Raj", "Meena",
-    "Arjun", "Priya", "Vikram", "Anjali", "Gopal", "Shanti",
-    "Mohan", "Lalita", "Anand", "Radha", "Vivek", "Kavitha",
-    "Sanjay", "Divya"
-]
-
 # Agent Prompts (System Instructions) 
 AGENT_SYSTEM_PROMPTS = {
     "DebateOrchestrator": (
@@ -50,27 +42,35 @@ AGENT_SYSTEM_PROMPTS = {
 
 # Stage Prompts 
 STAGE_PROMPTS = {
-    "opening_statement": (
+    "opening": (
         "{retrieved_context}"
-        "Deliver your opening statement for: '{topic}'. "
-        "Provide 3-4 numbered points. Use provided context if relevant."
+        "Give your opening statement for the debate topic:\n"
+        "'{topic}'.\n\n"
+        "Respond with 3–4 numbered, concise, evidence-based points."
     ),
+
     "rebuttal": (
         "{retrieved_context}"
-        "Debate summary so far:\n\n{summary}\n\n"
-        "Offer a rebuttal to the opposing side. Provide 2-3 numbered points."
+        "Debate summary so far:\n{summary}\n\n"
+        "Provide a rebuttal addressing the strongest opposing arguments.\n"
+        "Respond with 2–3 numbered points."
     ),
-    "closing_statement": (
+
+    "closing": (
         "{retrieved_context}"
-        "Debate summary so far:\n\n{summary}\n\n"
-        "Deliver your closing statement. Provide 2-3 numbered points."
+        "Debate summary so far:\n{summary}\n\n"
+        "Provide a closing statement reinforcing your key arguments.\n"
+        "Respond with 2–3 numbered points."
     ),
-    "judge_analysis": (
-        "Debate summary:\n\n{summary}\n\n"
-        "Provide an impartial summary in this format:\n\n"
-        "Affirmative Key Points:\n- ...\n\nNegative Key Points:\n- ..."
+
+    "judge": (
+        "Debate summary:\n{summary}\n\n"
+        "Provide an impartial summary with the following format:\n\n"
+        "Affirmative Key Points:\n- ...\n\n"
+        "Negative Key Points:\n- ..."
     ),
 }
+
 
 # Summarization Prompt
 SUMMARY_PROMPT_TEMPLATE = (
@@ -81,16 +81,16 @@ SUMMARY_PROMPT_TEMPLATE = (
 
 #Token Limits
 MAX_TOKENS_PER_STAGE = {
-    "opening_statement": 300,
-    "rebuttal": 250,
-    "closing_statement": 250,
-    "judge_analysis": 200,
+    "opening": 280,
+    "rebuttal": 240,
+    "closing": 220,
+    "judge": 200,
 }
 MAX_SUMMARY_TOKENS = 120
 
 
 PROMPT_EXAMPLES = {
-    "opening_statement": [
+    "opening": [
         {
             "role": "user",
             "content": "Deliver an opening statement for: 'Should pineapple belong on pizza?' Provide 3-4 numbered points.",
