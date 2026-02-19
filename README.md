@@ -2,19 +2,23 @@
 
 
 ## Project Structure
+
 Multi-Agent-Debate-System/
 │
 ├── src/
-│   ├── agents.py
-│   ├── app.py
-│   ├── config.py
-│   ├── debate_state.py
-│   ├── main.py
-│   └── rag_pipeline.py
+│ ├── app.py # Streamlit UI
+│ ├── agents.py # AI agent logic
+│ ├── config.py # System configuration
+│ ├── debate_state.py # Debate memory
+│ ├── main.py # CLI entry point
+│ ├── rag_pipeline.py # RAG + vector DB logic
+│ └── test_rag.py # RAG test script
 │
-├── knowledge/
-│   └── .gitkeep
+├── knowledge/ # PDF files for RAG
 │
+├── .streamlit/
+│ └── config.toml
+│
+├── requirements.txt
 ├── .gitignore
-├── README.md
-└── requirements.txt
+└── README.md
