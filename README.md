@@ -1,24 +1,29 @@
-# Muti-Agent-Debate-System
+# 🧠 Muti-Agent-Debate-System
 
 
 ## Project Structure
 
+```
 Multi-Agent-Debate-System/
 │
 ├── src/
-│ ├── app.py # Streamlit UI
-│ ├── agents.py # AI agent logic
-│ ├── config.py # System configuration
-│ ├── debate_state.py # Debate memory
-│ ├── main.py # CLI entry point
-│ ├── rag_pipeline.py # RAG + vector DB logic
-│ └── test_rag.py # RAG test script
+│   ├── app.py              
+│   ├── agents.py          
+│   ├── config.py          
+│   ├── debate_state.py     
+│   ├── main.py             
+│   ├── rag_pipeline.py     
+│   └── test_rag.py         
 │
-├── knowledge/ # PDF files for RAG
+├── knowledge/              
 │
 ├── .streamlit/
-│ └── config.toml
+│   └── config.toml
 │
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
+
+# 🚀  Debate Agent Outlook
+![WhatsApp Image 2026-02-09 at 5 36 43 PM](https://github.com/user-attachments/assets/72a2fe12-eb38-4d8f-98d3-a32c59b53432)
